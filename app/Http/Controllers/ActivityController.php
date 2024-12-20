@@ -11,9 +11,9 @@ class ActivityController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $result = ActivityService::getActivities();
+        $result = ActivityService::getActivities($request);
 
         return response()->json(new PaginationBaseResource($result), 200);
     }

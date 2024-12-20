@@ -42,4 +42,15 @@ class Activity extends Model
             self::ACTIVITY_TYPE_SESSION,
         ])];
     }
+
+    public static function getActivityType(string $activityType): string
+    {
+        return match ($activityType) {
+            self::ACTIVITY_TYPE_GUIDANCE => 'Guidance',
+            self::ACTIVITY_TYPE_ANNOUNCEMENT => 'Announcement',
+            self::ACTIVITY_TYPE_VACANCY => 'Vacancy',
+            self::ACTIVITY_TYPE_CLASS => 'Class',
+            self::ACTIVITY_TYPE_SESSION => 'Session',
+        };
+    }
 }
