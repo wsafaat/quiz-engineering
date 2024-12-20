@@ -33,6 +33,8 @@ class ActivityService
             'location',
             'is_published',
             'is_active',
+            'created_at',
+            'updated_at',
         ];
 
         $events = Event::select($columnSelect)->get()->toArray();
